@@ -1,12 +1,12 @@
 {
-  "name": "DenariusNodeWallet",
+  "name": "BitcoinFinalWallet",
   "version": "1.0.0",
-  "description": "A Web Wallet for denariusd in NodeJS",
+  "description": "A Web Wallet for bitcoinfinald in NodeJS",
   "repository": {
     "type": "git",
-    "url": "https://github.com/carsenk/denariusnodewallet.git"
+    "url": "https://github.com/undead93/bitcoinfinalwallet.git"
   },
-  "author": "Carsen Klock",
+  "author": "Syafiq Det",
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
@@ -60,7 +60,7 @@
     "twit": "^2.2.5",
     "unirest": "^0.5.1",
     "validator": "^7.0.0",
-    "wallet-address-validator": "git://github.com/carsenk/wallet-address-validator"
+    "wallet-address-validator": "git://github.com/undead93/wallet-address-validator"
   },
   "devDependencies": {
     "chai": "^3.5.0",

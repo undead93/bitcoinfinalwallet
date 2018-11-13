@@ -19,12 +19,12 @@ block content
   .container
     .page-header
       h3(align='center')
-        | Withdraw DNR Balance
+        | Withdraw BTCF Balance
       p
-        .titlesmall(align='center') Send Denarius to any other DNR address!
+        .titlesmall(align='center') Send BitcoinFinal to any other BTCF address!
       p
         .balancesm(align='center') Balance: 
-          strong #{balance} DNR
+          strong #{balance} BTCF
       br
       #SubmitDisplayModal.modal
         .modal-dialog
@@ -45,29 +45,29 @@ block content
                       .col-sm-8
                         .input-group
                           input.form-control(type='text', id='total', disabled)
-                          span.input-group-addon DNR
+                          span.input-group-addon BTCF
                 .modal-footer
-                    button.btn.btn-grey(type='submit', id='submit', onclick='confirmed()') Confirm and Send DNR
+                    button.btn.btn-grey(type='submit', id='submit', onclick='confirmed()') Confirm and Send BTCF
                     button.btn.btn-default(type='button', data-dismiss='modal') Close
       p
         form.form-horizontal(action='/withdraw/send', method='POST', id='sendform')
           input(type='hidden', name='_csrf', value=_csrf)
           .form-group
-            label.col-sm-3.control-label.black(for='sendaddress') DNR Wallet Address
+            label.col-sm-3.control-label.black(for='sendaddress') BTCF Wallet Address
             .col-sm-7
-              input.form-control(type='text', name='sendaddress', id='sendaddress', placeholder='D8jRk63FQDRUfeKqz99rkmCr47qsFUT5K2')
+              input.form-control(type='text', name='sendaddress', id='sendaddress', placeholder='BPay1nJzTddexWB57MpYB92q2ADjNYyo3M')
           .form-group
             label.col-sm-3.control-label.black(for='amount') Amount to Send
             .col-sm-7
               .input-group
                 input.form-control(type='text', name='amount', id='amount', placeholder='1',  onkeyup='updateDue()')
-                span.input-group-addon DNR
+                span.input-group-addon BTCF
           .form-group
             label.col-sm-3.control-label.black(for='amount') Network Fee
             .col-sm-7
               .input-group
                 input.form-control(type='text', name='fee', id='fee', value='-0.0001',  disabled)
-                span.input-group-addon Approx. DNR Fee
+                span.input-group-addon Approx. BTCF Fee
           .form-group
             label.col-sm-3.control-label.black(for='total') Total with fees
             .col-sm-7
@@ -78,4 +78,4 @@ block content
             .col-sm-offset-3.col-sm-4
               button.btn.btn-default(type='button', id='sendDNR', onclick='clicked()', data-toggle='modal', data-target='#SubmitDisplayModal')
                 i.fa.fa-paper-plane
-                |  Send Denarius
+                |  Send BitcoinFinal
