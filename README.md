@@ -77,7 +77,7 @@ The easiest way to get started is to clone the repository:
 
 ```bash
 # Get the latest snapshot
-git clone --depth=1 https://github.com/carsenk/denariusnodewallet.git denariuswallet
+git clone --depth=1 https://github.com/undead93/bitcoinfinalwallet.git bitcoinfinalwallet
 
 # Change directory
 cd denariuswallet
