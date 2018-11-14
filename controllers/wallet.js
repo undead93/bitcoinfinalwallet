@@ -14,10 +14,10 @@ var sendJSONResponse = function (res, status, content) {
 
 // all config options are optional
 var client = new bitcoin.Client({
-    host: process.env.DNRHOST,
-    port: process.env.DNRPORT,
-    user: process.env.DNRUSER,
-    pass: process.env.DNRPASS,
+    host: process.env.BTCFHOST,
+    port: process.env.BTCFPORT,
+    user: process.env.BTCFUSER,
+    pass: process.env.BTCFPASS,
     timeout: 30000
 });
 
@@ -34,7 +34,7 @@ exports.getWithdraw = (req, res) => {
         balance = 0;
       }
     res.render('account/withdraw', {
-        title: 'Send DNR',
+        title: 'Send BTCF',
         balance: balance
     });
   });
@@ -88,9 +88,9 @@ exports.wallet = function (req, res) {
                 });
             }
 
-            var qr = 'denarius:'+address;
+            var qr = 'bitcoinfinal:'+address;
 
-            unirest.get("https://api.coinmarketcap.com/v1/ticker/denarius-dnr/")
+            unirest.get("https://api.coinmarketcap.com/v1/ticker/bitcoinfinal-btcf/")
               .headers({'Accept': 'application/json'})
               .end(function (result) {
                 var usdprice = result.body[0]['price_usd'] * balance;
@@ -131,18 +131,18 @@ exports.address = function (req, res) {
     client.getNewAddress(`dnrw(${username})`, function (error, address, resHeaders) {
         if (error) return console.log(error);
 
-        var qr = 'denarius:'+address
+        var qr = 'bitcoinfinal:'+address
 
         QRCode.toDataURL(qr, function(err, data_url) {
 
-        res.render('account/newaddress', { title: 'New DNR Address', user: req.user, address: address, data_url: data_url });
+        res.render('account/newaddress', { title: 'New BTCF Address', user: req.user, address: address, data_url: data_url });
     });
   });
 };
 
 /**
  * POST /withdraw
- * Send Denarius funds
+ * Send BitcoinFinal funds
  */
 exports.withdraw = (req, res, next) => {
 	  var fee = 0.0001;
@@ -157,7 +157,7 @@ exports.withdraw = (req, res, next) => {
 
     if (parseFloat(amount) - fee > balance) {
 
-        req.flash('errors', { msg: 'Withdrawal amount exceeds your DNR balance'});
+        req.flash('errors', { msg: 'Withdrawal amount exceeds your BTCF balance'});
         return res.redirect('/withdraw');
 
     } else {
@@ -175,14 +175,14 @@ exports.withdraw = (req, res, next) => {
                 var sendtx = sendFromtx;
                 var vamount = parseFloat(`${amount}`);
 
-                req.flash('success', { msg: `Your ${vamount} DNR was sent successfully! TX ID: ${sendtx}` });
+                req.flash('success', { msg: `Your ${vamount} BTCF was sent successfully! TX ID: ${sendtx}` });
                 return res.redirect('/withdraw');
             }
         });
 
     } else {
 
-        req.flash('errors', { msg: 'You entered an invalid Denarius (DNR) Address!' });
+        req.flash('errors', { msg: 'You entered an invalid BitcoinFinal (BTCF) Address!' });
         return res.redirect('/withdraw');
     }
   }

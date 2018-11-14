@@ -1,5 +1,5 @@
 
-Denarius [DNR] NodeJS Web Wallet
+BitcoinFinal [BTCF] NodeJS Web Wallet
 =======================
 
 [![Dependency Status](https://david-dm.org/carsenk/denariusnodewallet/status.svg?style=flat)](https://david-dm.org/carsenk/denariusnodewallet) [![Build Status](https://travis-ci.org/carsenk/denariusnodewallet.svg?branch=master)](https://travis-ci.org/carsenk/denariusnodewallet) [![Join the chat at https://gitter.im/denariusproject/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/denariusproject/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link) [![Thinkful Pair on Node](https://tf-assets-staging.s3.amazonaws.com/badges/thinkful_repo_badge.svg)](http://start.thinkful.com/node/)
@@ -9,11 +9,9 @@ Denarius [DNR] NodeJS Web Wallet
 
 **Live Demo**: Currently unavailable
 
-Denarius Node Wallet - A NodeJS/MongoDB powered denariusd Web Wallet.
+BitcoinFinal Node Wallet - A NodeJS/MongoDB powered denariusd Web Wallet.
 
 Send and Receive Funds, Create new addresses, View Transactions, Edit your account, and more!
-
-Swap between your DNR Balance in USD and BTC prices calculated from http://coinmarketcap.com/currencies/denarius-dnr/
 
 2FA Authentication is included as well as QR Codes for addresses and 2FA!
 
@@ -29,7 +27,7 @@ Table of Contents
 Features
 --------
 
-- Send and Receive DNR
+- Send and Receive BTCF
 - Wallet Addresses, Create new ones
 - View all transactions
 - Two Factor Authentication
@@ -60,7 +58,7 @@ Features
 Prerequisites
 -------------
 
-- [denariusd](https://github.com/carsenk/denarius)
+- [BitcoinFinal](https://github.com/carsenk/denarius)
 - [MongoDB](https://www.mongodb.org/downloads)
 - [Node.js 6.0+](http://nodejs.org)
 - Command Line Tools (Optional)
@@ -85,24 +83,12 @@ cd denariuswallet
 # Install NPM dependencies
 npm install
 
-# Or, if you prefer to use `yarn` instead of `npm`
-yarn install
-
 # Then simply start your app
 node app.js
 
-# Or, if you are using nodemon
-nodemon app.js
 ```
 
-**Note:** I highly recommend installing [Nodemon](https://github.com/remy/nodemon).
-It watches for any changes in your  node.js app and automatically restarts the
-server. Once installed, instead of `node app.js` use `nodemon app.js`. It will
-save you a lot of time in the long run, because you won't need to manually
-restart the server each time you make a small change in code. To install, run
-`sudo npm install -g nodemon`.
-
-Denarius Daemon Setup
+BitcoinFinal Daemon Setup
 ------------------
 
 You must have a Denarius daemon running on a local server or remote server (highly recommend using SSL)
@@ -126,7 +112,7 @@ License
 
 The MIT License (MIT)
 
-Copyright (c) 2017 Carsen Klock
+Copyright (c) 2018 Syafiq Det
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
