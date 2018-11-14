@@ -90,7 +90,7 @@ exports.wallet = function (req, res) {
 
             var qr = 'bitcoinfinal:'+address;
 
-            unirest.get("https://api.coinmarketcap.com/v1/ticker/bitcoinfinal-btcf/")
+            unirest.get("https://api.coinmarketcap.com/v1/ticker/denarius-dnr/")
               .headers({'Accept': 'application/json'})
               .end(function (result) {
                 var usdprice = result.body[0]['price_usd'] * balance;
