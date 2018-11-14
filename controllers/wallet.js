@@ -153,7 +153,7 @@ exports.withdraw = (req, res, next) => {
     client.getBalance(`dnrw(${username})`, 10, function (error, balance, resHeaders) {
         if (error) return console.log(error);
 
-    var valid = WAValidator.validate(`${sendtoaddress}`, 'DNR');
+    var valid = WAValidator.validate(`${sendtoaddress}`, 'BTCF');
 
     if (parseFloat(amount) - fee > balance) {
 
