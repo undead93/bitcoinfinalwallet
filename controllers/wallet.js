@@ -145,7 +145,7 @@ exports.address = function (req, res) {
  * Send BitcoinFinal funds
  */
 exports.withdraw = (req, res, next) => {
-	  var fee = 0.0001;
+	  var fee = 1;
     var username = req.user.email;
     var sendtoaddress = req.body.sendaddress;
     var amount = req.body.amount;
